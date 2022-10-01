@@ -1,38 +1,59 @@
-//Task1
-var x = 5;
-if(x>0){
-    x++;
-}else if(x<0){
-    x=x-2;
-}else{
-    x=10;
+//Task 1
+
+console.log("task1")
+var a=16;
+var b=4;
+var number_of_vidrizok=0;
+while(a>=b){
+    a=a-b;
+    number_of_vidrizok++;
 }
-console.log(x);
-//Task2
-var a=3;
-(a==0)?console.log("нульове число"):
-    (a>0)?(a%2==0)?console.log("додатне парне"):console.log("додатне непарне"):
-        (a%2==0)?console.log("від’ємне парне число"): console.log("від’ємне непарне число");
-//Task3
-var a=[2,2,7,2];
-var chislo = a[0];
-var s;
-for(var i=1;i<a.length;i++){
-    if(a[i]==chislo){
-    }else{
-        s=i;
+console.log(number_of_vidrizok)
+
+//Task 2
+console.log("task2")
+var n=1234;
+while(n!=0){
+    var chislo = n%10;
+    console.log(chislo);
+    n=(n-chislo)/10;
+}
+//Task 3
+console.log("task3")
+var a1 = 12;
+var b1 = 18;
+var sum=0;
+for(var i=a1;i<b1;i++){
+    sum=sum+i;
+}
+console.log(sum);
+//Task 4
+console.log("task4")
+var numb = 8;
+var fact=1;
+for(var i=1;i<=numb;i++){
+    fact=fact*i;
+}
+console.log(fact);
+//Task 5.
+console.log("task5")
+var answ_array = [];
+var promted;
+var answ_sum=0;
+do {
+    i=0;
+    promted = prompt("Enter i");
+    answ_array[i]=Number(promted);
+    answ_sum = answ_sum+answ_array[i];
+    i++;
+}while(promted!==" ");
+console.log(answ_sum);
+//Task 6.
+console.log("task6")
+var a2=12;
+var b2=15;
+for(var i=a2;i<=b2;i++){
+    for(var j=0;j<=i-a2;j++){
+        console.log(i);
     }
 }
-console.log(++s);
-//Task4
-var k=5;
-var str ;
-switch (k){
-    case 1:str = "погано";break;
-    case 2:str = "погано";break;
-    case 3:str = "задовільно";break;
-    case 4:str = "добре";break;
-    case 5:str = "відмінно";break;
-    default:str = "помилка";
-}
-console.log(str);
