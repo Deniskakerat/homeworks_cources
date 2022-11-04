@@ -1,22 +1,22 @@
 //Task1
 "use strict";
-/*Напишіть рекурсивну функцію digitSum(k), яка знаходить суму цифр цілого числа k  без використання циклів.
+/*create() , яка приймає один аргумент у вигляді рядка. Ця функція повертає анонімну функцію, яка перевіряє чи
+ переданий в неї аргумент збігається з аргументом зовнішньої функції.
+Наприклад:
+ tom = create("pass_for_Tom")
+ tom("pass_for_Tom") повертає true
+ tom("pass_for_tom")
+
 */
-var sum = 0;
-var k = 121;
-
-function digitSum(k) {
-    if(k!=0) {
-        var dob = k % 10;
-        k = k - dob;
-        k = k / 10;
-        sum = sum + dob;
-        return digitSum(Math.ceil(k));
+function create(str){
+    let str1=str;
+    return function (str){
+        return (str === str1);
     }
-    return 0;
-}
 
-digitSum(k);
-console.log(Math.ceil(sum));
+}
+let tom = create("pass_for_Tom");
+console.log(tom("pass_for_Tom"));
+console.log(tom("pass_for_tom"));
 
 
