@@ -2,35 +2,17 @@
 "use strict";
 
 /*
-Task 2.
-Напишіть функцію, яка приймає як параметр об'єкт salaries із зарплатами та повертає значення максимальної із зарплат.
-Код має працювати з різною кількістю зарплат в об'єкті.
-Приклади salaries у файлі task2.js
+Напишіть функцію mul(), яка приймає будь-яку кількість параметрів різного типу та повертає добуток параметрів типу Number.
+Якщо параметри Number відсутні, повертає число 0.
  */
-var salaries1 = {
-    John: 100,
-    Bill: 300,
-    Mike: 250,
-};
-
-var salaries2 = {
-    Cris: 150,
-    Brain: 600,
-    John: 300,
-    Steve: 400,
-    Bill: 50,
-};
-
-function count(obj) {
-    let max = 0;
-    for (let key in obj) {
-        if (max <= obj[key]) {
-            max = obj[key];
+function mul (x,y){
+    let result=1;
+    for(let i=0; i<arguments.length; i++){
+        if(!isNaN(arguments[i])){
+            result *=  arguments[i];
         }
     }
-    return max;
+    return result;
 }
-
-console.log(count(salaries1));
-console.log(count(salaries2));
-
+console.log(mul(1, "str", 2, 3, true)); // 6
+console.log(mul(null, "str", false, true)); // 0
